@@ -42,6 +42,7 @@ public class User implements Serializable {
 	private String lastName;
 
 	@Size(min = 3, max = 15)
+	@Column(unique = true)
 	private String userName;
 
 	@Column
