@@ -25,7 +25,7 @@ import lombok.experimental.Accessors;
 @Entity
 @Table(name = "cart")
 public class Cart {
-
+//test
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
