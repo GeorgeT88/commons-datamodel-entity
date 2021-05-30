@@ -65,6 +65,9 @@ public class User implements Serializable {
 
 	@Column
 	private LocalDate lastUpdatedOn;
+	
+	@Column
+	private String role;
 
 	@ManyToMany(fetch = FetchType.EAGER,cascade = { CascadeType.PERSIST })
 	@JoinTable(name = "favorite_product_list", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
