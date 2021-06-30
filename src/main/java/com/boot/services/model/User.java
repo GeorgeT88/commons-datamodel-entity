@@ -72,5 +72,8 @@ public class User implements Serializable {
 	@ManyToMany(fetch = FetchType.EAGER,cascade = { CascadeType.PERSIST })
 	@JoinTable(name = "favorite_product_list", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
 	private Set<Product> favoriteProductList;
+	
+	@Column
+	private boolean isEnabled;
 
 }
