@@ -74,6 +74,6 @@ public class User implements Serializable {
 	private Set<Product> favoriteProductList;
 	
 	@Column
-	private boolean isEnabled;
+	private boolean isActivated;
 
 }
