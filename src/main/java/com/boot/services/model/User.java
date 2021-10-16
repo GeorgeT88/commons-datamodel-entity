@@ -42,9 +42,6 @@ public class User implements Serializable {
 	private String lastName;
 
 	@Column
-	private LocalDate birthDate;
-
-	@Column
 	private String password;
 
 	@Column
