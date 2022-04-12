@@ -19,6 +19,7 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	//This data structure does not allow multiple products of the same type to be added to a cart. you have to associate the same product multiple times to a cart
 	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.REMOVE })
 	@JoinTable(name = "list_of_products_in_cart", joinColumns = @JoinColumn(name = "cart_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
 	private List<Product> productList;
