@@ -45,7 +45,7 @@ public class Order implements Serializable {
 	private String state;
 
 	@Column
-	private long zipPostalCode;
+	private String zipPostalCode;
 
 	@Column
 	private String country;
