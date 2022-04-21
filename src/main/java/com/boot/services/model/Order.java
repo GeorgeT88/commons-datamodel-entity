@@ -5,18 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
@@ -36,6 +25,42 @@ public class Order implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+
+	@Column
+	private String firstName;
+
+	@Column
+	private String lastName;
+
+	@Column
+	private String addressLine1;
+
+	@Column
+	private String addressLine2;
+
+	@Column
+	private String city;
+
+	@Column
+	private String state;
+
+	@Column
+	private long zipPostalCode;
+
+	@Column
+	private String country;
+
+	@Column
+	private String nameOnCard;
+
+	@Column
+	private long cardNumber;
+
+	@Column
+	private LocalDateTime expiryDate;
+
+	@Column
+	private int cvv;
 	
 	@Column(unique = true)
 	private UUID uuid;
@@ -57,5 +82,8 @@ public class Order implements Serializable {
 	@JoinColumn(name = "user_id", referencedColumnName = "id")
 	private User user;
 
-
+	@PreUpdate
+	protected void lastUpdatedOnPreUpdate() {
+		this.lastUpdatedOn =  LocalDateTime.now();
+	}
 }
