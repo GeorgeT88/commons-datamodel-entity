@@ -47,7 +47,7 @@ public class User implements Serializable {
 	@Column
 	private String phoneNumber;
 
-	@Size(min = 3, max = 25)
+	@Size(min = 3, max = 50)
 	@Column(unique = true)
 	private String email;
 
