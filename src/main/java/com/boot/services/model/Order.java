@@ -59,6 +59,7 @@ public class Order implements Serializable {
 	@Column
 	private LocalDateTime expiryDate;
 
+	//usually, when you integrate a paying service, no card details reach your application. So I don't think you'll ever need this.
 	@Column
 	private int cvv;
 	
