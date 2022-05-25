@@ -2,14 +2,10 @@ package com.boot.services.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
+import com.boot.services.enums.ProductStatus;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -48,5 +44,9 @@ public class Product implements Serializable {
 
 	@Column
 	private int productStock;
+
+	@Enumerated(EnumType.STRING)
+	@Column
+	private ProductStatus status;
 
 }
